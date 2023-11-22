@@ -60,7 +60,7 @@ body.dark-theme {
     --body-color: hsl(var(--hue-color), 28%, 12%);
     --container-color: hsl(var(--hue-color), 29%, 16%);
     --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-    --scroll-thumb-color: hsl(var(--hue-color), 60%, 36%)
+    --scroll-thumb-color: hsl(var(--hue-color), 60%, 36%);
 }
 
 .nav_btns {
@@ -94,7 +94,7 @@ body {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 h1, h2, h3, h4 {
@@ -290,7 +290,11 @@ img {
 }
 
 .home__title {
-    font-size: var(--big-font-size)
+    font-size: var(--big-font-size);
+}
+
+.home__name{
+    color: var(--first-color);
 }
 
 .home__subtitle {
@@ -517,6 +521,10 @@ img {
 
 .skills_js {
     width: 25%
+}
+
+.skills_react {
+    width: 20%
 }
 
 .skills_office {
@@ -765,10 +773,25 @@ img {
 
 .features__modal-content {
     position: relative;
-    width: 350px;
+    width: 400px;
     background-color: var(--container-color);
     padding: 1.5rem;
     border-radius: .5rem
+}
+
+.features_modal_scroll{
+    height: 550px;
+    overflow: scroll;
+}
+
+.features_modal_scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: var(--first-color);
+}
+
+.btn-features:hover{
+    color: var(--first-color);
 }
 
 .features__modal-services {
@@ -799,6 +822,54 @@ img {
     margin-right: var(--mb-0-25)
 }
 
+.comingsoon__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s
+}
+
+.comingsoon__modal-content {
+    position: relative;
+    width: 400px;
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: .5rem
+}
+
+.comingsoon__button {
+    cursor: pointer;
+}
+
+.comingsoon__modal-services {
+    row-gap: 1rem
+}
+
+.comingsoon__modal-title {
+    font-size: 1.5rem;
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1-5)
+}
+
+.comingsoon__modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--first-color);
+    cursor: pointer
+}
+
 .active-modal {
     opacity: 1;
     visibility: visible
@@ -815,7 +886,8 @@ img {
 .portfolio__img {
     width: 265px;
     border-radius: .5rem;
-    justify-self: center
+    justify-self: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .portfolio_img_ss {
@@ -1091,7 +1163,9 @@ img {
     }
 
     .home__blob {
-        width: 180px
+        width: 180px;
+        justify-content: center;
+        align-items: center;
     }
 
     .skills__title {
@@ -1176,6 +1250,7 @@ img {
 }
 
 @media screen and (min-width:768px) {
+
     .container {
         margin-left: auto;
         margin-right: auto
@@ -1241,7 +1316,9 @@ img {
     }
 
     .home__blob {
-        width: 270px
+        width: 270px;
+        justify-content: center;
+        align-items: center;
     }
 
     .home__scroll {
@@ -1359,7 +1436,7 @@ img {
     }
 
     .home__blob {
-        width: 320px
+        width: 320px;
     }
 
     .home__social {
@@ -1443,7 +1520,8 @@ img {
 }
 
 #success__modal-button {
-    margin-left: 83%
+    margin-left: 87%;
+    cursor: pointer;
 }
 
 .success__modal-title {
@@ -1473,14 +1551,15 @@ img {
 
   .text-loader{
     top: 43%;
-    left: 44%;
+    color: var(--first-color);
+    text-align: center;
     display: block;
     position: relative;
   }
   
   .loader{
     top: 45%;
-    left: 39%;
+    left: 37.20%;
     display: block;
     position: relative;
     height: 15px;
